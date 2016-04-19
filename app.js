@@ -5,13 +5,13 @@
 */
 
 /* ### START CONFIG ### */
-var facebookEmail = 'jackcom.fibo@gmail.com';
-var facebookPassword = '096826862';
+var facebookEmail = 'email';
+var facebookPassword = 'pass';
 //NETPIe
-const KEY    = "d0B0ucFcjERJ6ER";
-const SECRET = "R3n0XQGPRxZt2gvxrPDusSRC2axjU7";
-const APPID     = "ROOM170";
-const NETPieSERAlias = "WEBROOM170"
+const KEY    = "d0B0ucFscjERJ6ER";
+const SECRET = "R3n0XQGPRxZt2gsvxrPDusSRC2axjU7";
+const APPID     = "myROOM";
+const NETPieSERAlias = "myROOM"
 /* ###  END CONFIG  ### */
 
 var login = require("facebook-chat-api");
@@ -20,9 +20,9 @@ login({email: facebookEmail, password: facebookPassword}, function callback (err
     if(err) return console.error(err);
     api.listen(function callback(err, message) {
 	 	if(message.body.match(/turn on/gi)){
-	 		microgear.chat('ROOM170', 'B');
+	 		microgear.chat('myRoom', 'ON');
 	 	}else if(message.body.match(/turn off/gi)){
-			microgear.chat('ROOM170', 'b');
+			microgear.chat('myRoom', 'OFF');
 	 	}
     });
 });
